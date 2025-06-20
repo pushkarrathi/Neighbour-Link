@@ -1,104 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NeighborLink</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NeighborLink 2.0</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#fff7ed',
+            accent: '#ef4444',
+            secondary: '#6366f1',
+            vibrant1: '#14b8a6',
+            vibrant2: '#facc15',
+            vibrant3: '#8b5cf6',
+            vibrant4: '#f43f5e',
+            vibrant5: '#0ea5e9'
+          },
+        }
+      }
+    }
+  </script>
+    <style>
+    .hidden { display: none; }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
-
-  <header class="bg-green-600 text-white p-6 shadow-lg">
-    <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-bold">NeighborLink</h1>
-      <nav>
-        <a href="#features" class="mx-4 hover:underline">Features</a>
-        <a href="#benefits" class="mx-4 hover:underline">Benefits</a>
-        <a href="#case-studies" class="mx-4 hover:underline">Case Studies</a>
-        <a href="#roadmap" class="mx-4 hover:underline">Roadmap</a>
-      </nav>
+<body class="bg-primary text-gray-900">
+<header class="bg-gradient-to-r from-vibrant1 via-vibrant2 to-vibrant3 text-white shadow fixed top-0 w-full z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold">NeighborLink</h1>
+        <nav class="space-x-6">
+            <a href="#" onclick="showPage('home')" class="hover:text-accent transition">Home</a>
+            <a href="#" onclick="showPage('features')" class="hover:text-accent transition">Features</a>
+            <a href="#" onclick="showPage('benefits')" class="hover:text-accent transition">Benefits</a>
+            <a href="#" onclick="showPage('caseStudies')" class="hover:text-accent transition">Case Studies</a>
+            <a href="#" onclick="showPage('roadmap')" class="hover:text-accent transition">Roadmap</a>
+            <a href="#" onclick="showPage('login')" class="hover:text-accent transition">Login</a>
+        </nav>
     </div>
-  </header>
+</header>
 
-  <section class="bg-white py-16 text-center">
-    <div class="container mx-auto">
-      <h2 class="text-4xl font-bold mb-4">Building Stronger Neighborhoods</h2>
-      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-        Connect, share, and collaborate with your neighbors to build a more sustainable and socially connected community.
-      </p>
-    </div>
-  </section>
+<main class="pt-24 px-6 md:px-16 lg:px-24 space-y-32">
+    <section id="home" class="page">
+        <div class="text-center max-w-4xl mx-auto" data-aos="zoom-in">
+            <h2 class="text-5xl font-extrabold text-accent mb-6">Connect. Share. Empower.</h2>
+            <p class="text-xl text-gray-700 mb-10">NeighborLink helps communities share tools, services, and opportunities, fostering trust and sustainability.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6 mt-16">
+            <div class="p-6 bg-white rounded-lg shadow-lg hover:scale-105 transition" data-aos="fade-up">
+                <h3 class="text-lg font-semibold text-vibrant1 mb-2">Share Tools</h3>
+                <p>Lend or borrow gardening tools, DIY kits, and more with trusted neighbors.</p>
+            </div>
+            <div class="p-6 bg-white rounded-lg shadow-lg hover:scale-105 transition" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="text-lg font-semibold text-vibrant2 mb-2">Offer Services</h3>
+                <p>Teach music, repair electronics, or help with resumes—connect through your skills.</p>
+            </div>
+            <div class="p-6 bg-white rounded-lg shadow-lg hover:scale-105 transition" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="text-lg font-semibold text-vibrant3 mb-2">Event Hub</h3>
+                <p>Stay informed about block parties, clean-up drives, and local initiatives.</p>
+            </div>
+            <div class="p-6 bg-white rounded-lg shadow-lg hover:scale-105 transition" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="text-lg font-semibold text-vibrant4 mb-2">Community Support</h3>
+                <p>Find or offer support during emergencies and collaborate on shared needs.</p>
+            </div>
+            <div class="p-6 bg-white rounded-lg shadow-lg hover:scale-105 transition" data-aos="fade-up" data-aos-delay="400">
+                <h3 class="text-lg font-semibold text-vibrant5 mb-2">Trusted Network</h3>
+                <p>Build real-life reputation through reviews and verifications, ensuring safe exchanges.</p>
+            </div>
+            <div class="p-6 bg-white rounded-lg shadow-lg hover:scale-105 transition" data-aos="fade-up" data-aos-delay="500">
+                <h3 class="text-lg font-semibold text-vibrant2 mb-2">Marketplace</h3>
+                <p>Buy and sell local handmade goods, upcycled furniture, or vintage finds.</p>
+            </div>
+        </div>
+    </section>
 
-  <section id="features" class="py-16 bg-gray-50">
-    <div class="container mx-auto">
-      <h3 class="text-3xl font-semibold text-center mb-10">Key Features</h3>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-6 shadow rounded">
-          <h4 class="text-xl font-semibold mb-2">Communal Goods</h4>
-          <p>List and borrow tools, furniture, and items within your community.</p>
+    <section id="features" class="page hidden">
+        <h2 class="text-4xl font-bold text-vibrant3 mb-8" data-aos="fade-right">Platform Features</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="p-6 bg-white rounded-lg shadow-lg" data-aos="fade-up">
+                <h3 class="text-xl font-semibold text-vibrant1 mb-2">Smart Inventory System</h3>
+                <p>Manage shared tools and appliances easily. Users can check availability, reserve items, and track usage history.</p>
+            </div>
+            <div class="p-6 bg-white rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="text-xl font-semibold text-vibrant2 mb-2">Skill Exchange Listings</h3>
+                <p>Find local experts and offer your skills. Ratings and reviews help maintain quality and trust.</p>
+            </div>
+            <div class="p-6 bg-white rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="text-xl font-semibold text-vibrant3 mb-2">Neighborhood Calendar</h3>
+                <p>Track upcoming community events and RSVP online. Stay involved and never miss a local happening.</p>
+            </div>
+            <div class="p-6 bg-white rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="text-xl font-semibold text-vibrant4 mb-2">Push Notifications</h3>
+                <p>Get instant alerts about item return deadlines, event updates, and safety announcements.</p>
+            </div>
+            <div class="p-6 bg-white rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="400">
+                <h3 class="text-xl font-semibold text-vibrant5 mb-2">Mobile-First Design</h3>
+                <p>Access all features on the go with a seamless mobile interface that supports accessibility standards.</p>
+            </div>
         </div>
-        <div class="bg-white p-6 shadow rounded">
-          <h4 class="text-xl font-semibold mb-2">Skill/Service Exchanges</h4>
-          <p>Connect with neighbors offering services like tutoring or repairs.</p>
-        </div>
-        <div class="bg-white p-6 shadow rounded">
-          <h4 class="text-xl font-semibold mb-2">Neighborhood Events</h4>
-          <p>Discover and participate in workshops, meetups, and local activities.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="benefits" class="py-16 bg-white">
-    <div class="container mx-auto">
-      <h3 class="text-3xl font-semibold text-center mb-10">Benefits to the Community</h3>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="p-4">
-          <h4 class="text-xl font-semibold mb-2">Reduced Waste</h4>
-          <p>Borrow instead of buying to reduce unnecessary purchases.</p>
+    <section id="benefits" class="page hidden">
+        <h2 class="text-4xl font-bold text-vibrant1 mb-8" data-aos="fade-left">Community Benefits</h2>
+        <div class="grid md:grid-cols-2 gap-10">
+            <ul class="space-y-4 text-lg" data-aos="fade-up">
+                <li>✅ Lower household expenses through borrowing.</li>
+                <li>✅ Reduce environmental footprint with reuse.</li>
+                <li>✅ Encourage inclusivity and neighborhood bonding.</li>
+                <li>✅ Foster a culture of volunteering and giving back.</li>
+                <li>✅ Promote knowledge sharing and collaboration.</li>
+            </ul>
+            <div data-aos="zoom-in">
+                <img src="https://source.unsplash.com/400x300/?community" alt="Community" class="rounded-lg shadow-md" />
+            </div>
         </div>
-        <div class="p-4">
-          <h4 class="text-xl font-semibold mb-2">Sustainability</h4>
-          <p>Sharing promotes eco-friendly living and conscious consumption.</p>
-        </div>
-        <div class="p-4">
-          <h4 class="text-xl font-semibold mb-2">Social Bonds</h4>
-          <p>Build stronger relationships with your neighbors through shared experiences.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="case-studies" class="py-16 bg-gray-50">
-    <div class="container mx-auto text-center">
-      <h3 class="text-3xl font-semibold mb-8">User Case Studies</h3>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-white p-6 rounded shadow">
-          <h4 class="text-xl font-semibold mb-2">Tool Sharing</h4>
-          <p>Borrow a drill for repairs or lend gardening tools to neighbors.</p>
+    <section id="caseStudies" class="page hidden">
+        <h2 class="text-4xl font-bold text-vibrant4 mb-8" data-aos="fade-right">Case Studies</h2>
+        <div class="space-y-12">
+            <div class="p-6 bg-white rounded shadow" data-aos="fade-up">
+                <h3 class="text-xl font-semibold">Urban Garden Revival – Springfield</h3>
+                <p>Neighbors collaborated to convert an abandoned lot into a thriving community garden using shared tools and knowledge.</p>
+            </div>
+            <div class="p-6 bg-white rounded shadow" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="text-xl font-semibold">Senior Tech Buddy Program – Rivertown</h3>
+                <p>Tech-savvy teens offered tutoring for seniors, helping them use smartphones and stay digitally connected.</p>
+            </div>
+            <div class="p-6 bg-white rounded shadow" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="text-xl font-semibold">Tool-Time Trust – Lakeside</h3>
+                <p>Residents organized monthly sharing drives for tools and books, drastically cutting consumer waste.</p>
+            </div>
         </div>
-        <div class="bg-white p-6 rounded shadow">
-          <h4 class="text-xl font-semibold mb-2">Skill-Building Workshops</h4>
-          <p>Host or attend workshops on cooking, crafts, or tech skills.</p>
+    </section>
+
+    <section id="roadmap" class="page hidden">
+        <h2 class="text-4xl font-bold text-vibrant5 mb-8" data-aos="fade-left">Future Roadmap</h2>
+        <ol class="list-decimal list-inside space-y-4 text-lg" data-aos="fade-up">
+            <li>Gamification module for contribution rewards.</li>
+            <li>Carbon tracking and sustainability analytics for users.</li>
+            <li>Collaboration with local municipalities and NGOs.</li>
+            <li>Expansion to new residential sectors and cities.</li>
+            <li>Open API for community-led innovation plugins.</li>
+        </ol>
+    </section>
+
+    <section id="login" class="page hidden">
+        <h2 class="text-4xl font-bold text-vibrant2 mb-8" data-aos="zoom-in">Login / Register</h2>
+        <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg" data-aos="fade-up">
+            <form class="space-y-6">
+                <input type="email" placeholder="Email" class="w-full px-6 py-3 border rounded text-lg" required />
+                <input type="password" placeholder="Password" class="w-full px-6 py-3 border rounded text-lg" required />
+                <button type="submit" class="w-full bg-vibrant2 text-white py-3 rounded text-lg hover:bg-yellow-400">Submit</button>
+            </form>
+            <p class="mt-4 text-sm text-gray-600">Don't have an account? <a href="#" class="text-vibrant3 hover:underline">Sign up here</a>.</p>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
+</main>
 
-  <section id="roadmap" class="py-16 bg-white">
-    <div class="container mx-auto text-center">
-      <h3 class="text-3xl font-semibold mb-8">Future Roadmap</h3>
-      <ul class="list-disc text-left max-w-xl mx-auto space-y-4">
-        <li><strong>New Features:</strong> Enhance engagement with innovative tools.</li>
-        <li><strong>Scalability:</strong> Expand to more neighborhoods and cities.</li>
-        <li><strong>Impact Measurement:</strong> Track community improvements and engagement.</li>
-      </ul>
-    </div>
-  </section>
+<footer class="bg-gradient-to-r from-vibrant1 via-vibrant2 to-vibrant3 text-white py-6 text-center mt-24">
+    <p class="text-sm">&copy; 2025 NeighborLink | Empowering Communities Together</p>
+</footer>
 
-  <footer class="bg-green-600 text-white py-6 text-center">
-    <p>&copy; 2025 NeighborLink | Built by Keshav Bajaj, Rithwik Reddy, Parinay (Team 15) at Vardhaman College of Engineering</p>
-  </footer>
-
+<script>
+    AOS.init();
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
+      document.getElementById(pageId)?.classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    showPage('home');
+  </script>
 </body>
 </html>
